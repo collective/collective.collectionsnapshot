@@ -1,0 +1,26 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="collective.collectionsnapshot">
+
+  <five:registerPackage package="." initialize=".initialize" />
+  <!--i18n:registerTranslations directory="locales" /-->
+
+  <browser:page
+      for="zope.interface.Interface"
+      name="paste-related"
+      class=".browser.Paste"
+      permission="zope2.View"
+      />
+
+
+  <browser:page
+      for="Products.ATContentTypes.interface.IATTopic"
+      name="collection-snapshot"
+      class=".browser.CopyCollected"
+      permission="zope2.View"
+      />
+
+</configure>
